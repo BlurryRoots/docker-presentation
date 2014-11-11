@@ -19,15 +19,20 @@ RUN npm install
 
 # Add content
 WORKDIR /opt/presentation
-ADD slides/ /opt/presentation/slides/
-ADD gfx /opt/presentation/gfx/
-ADD index.html /opt/presentation/index.html
-ADD init.js /opt/presentation/js/init.js
-ADD himmel.css /opt/presentation/css/theme/himmel.css
-ADD tomorrow.css /opt/presentation/lib/css/tomorrow.css
-ADD Gruntfile.js /opt/presentation/Gruntfile.js
-RUN sed -i "s/port: port/port: port,\n\t\t\t\t\thostname: \'\'/g" Gruntfile.js
+ADD base/index.html /opt/presentation/index.html
+ADD base/Gruntfile.js /opt/presentation/Gruntfile.js
+RUN sed -i "s/port: port/port: port,\n\t\t\t\t\thostname: \'\'/g" /opt/presentation/Gruntfile.js
+ADD base/js/init.js /opt/presentation/js/init.js
+ADD base/css/theme/himmel.css /opt/presentation/css/theme/himmel.css
+ADD base/lib/css/tomorrow.css /opt/presentation/lib/css/tomorrow.css
+ADD base/setup.sh /opt/presentation/setup.sh
+
+# Volumes
+VOLUME /opt/presentation/slides/
+VOLUME /opt/presentation/gfx/
+
 
 EXPOSE 8000
 
-CMD [ "grunt", "serve" ]
+WORKDIR /opt/presentation
+ENTRYPOINT /opt/presentation/setup.sh

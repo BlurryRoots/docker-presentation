@@ -5,6 +5,16 @@ by Sven Freiberg
 
 
 
+# Warum ?
+
+* Interesse an Spieleprogrammierung
+* Medieninformatik Hochschule Trier (UCB)
+* Praxis
+	* Gam Jams
+	* Praxissemester Daedalic
+
+
+
 # Übersicht
 - Motivation
 - Aufbau
@@ -105,6 +115,8 @@ extends GameObject {
 
 * Spiel ist Datenbank mit glitzernder Benutzeroberfläche
 
+![sc](/gfx/starcraft.png)
+
 
 
 # Übersicht
@@ -173,14 +185,6 @@ class Entity {
 ```
 
 
-## Entities
-
-```java
-// travels a max of 1337m and hits for 42hp
-bullet.addData (new DamageModifier (42, 1337));
-```
-
-
 ## Components/Data
 
 * Beschreiben Ausprägung einer Entity
@@ -197,6 +201,14 @@ extends Data {
 	public int mass;
 	public Vector3 velocity; 
 }
+```
+
+
+## Componet hinzufügen
+
+```java
+// travels a max of 1337m and hits for 42hp
+bullet.addData (new DamageModifier (42, 1337));
 ```
 
 
@@ -227,6 +239,21 @@ class MovementProcessor extends Processor {
 	}
 }
 ```
+
+
+## Interprocessor Communication
+
+* Prozessoren müssen in der Lagen sein zu kommunizieren
+* Event/Message System
+	* Observer Pattern (eher problematisch)
+	* Event Queue (gut verzögerbar)
+
+
+## Event Dispatching
+
+Schematische Darstellung
+
+![events](/gfx/events.png)
 
 
 
