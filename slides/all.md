@@ -10,7 +10,7 @@ by Sven Freiberg
 * Interesse an Spieleprogrammierung
 * Medieninformatik Hochschule Trier (UCB)
 * Praxis
-	* Gam Jams
+	* Game Jams
 	* Praxissemester Daedalic
 
 
@@ -107,8 +107,8 @@ extends GameObject {
 ## Probleme
 
 * Designer werden sich kaum an Klassenstruktur halten wollen
-* Anforderung werden mit Sicherheit geändert
-* Meistens auch gravierendk (Prototyping)
+* Anforderungen werden mit Sicherheit geändert
+* Meistens auch gravierend (Prototyping)
 
 
 ## (Philosophischer) Ansatz
@@ -137,7 +137,7 @@ extends GameObject {
 
 ## Fokus
 
-* Datengetrieben Architektur
+* Datengetriebene Architektur
 
 
 ## Ansatz
@@ -149,7 +149,7 @@ extends GameObject {
 
 ## Fokus
 
-* Datengetrieben Architektur
+* Datengetriebene Architektur
 * Näher an Designern
 * Kein Software Ingenieur nötig
 * Maximale Abstraktion von GOs
@@ -167,13 +167,13 @@ extends GameObject {
 
 ## Entities
 
-* Representation eines Game Objects
+* Repräsentation eines Game Objects
 * Effektiv nur eine ID (ähnlich Datenbank)
 
 
 ## Entities
 
-* Impelemntierung z.B. per Facade Pattern
+* Implementierung z.B. per Facade Pattern
 * Erleichtert OOP Transition
 
 ```java
@@ -209,7 +209,7 @@ extends Data {
 ```
 
 
-## Componet hinzufügen
+## Component hinzufügen
 
 ```java
 // travels a max of 1337m and hits for 42hp
@@ -221,7 +221,7 @@ bullet.addData (new DamageModifier (42, 1337));
 
 * Hält Logik verantwortlich für
 	* Berechnung einer Komponente
-	* Sematische Gruppen von Komponenten
+	* Semantische Gruppen von Komponenten
 
 
 ## Systems/Processors
@@ -248,7 +248,7 @@ class MovementProcessor extends Processor {
 
 ## Interprocessor Communication
 
-* Prozessoren müssen in der Lagen sein zu kommunizieren
+* Prozessoren müssen in der Lage sein zu kommunizieren
 * Event/Message System
 	* Observer Pattern (eher problematisch)
 	* Event Queue (gut verzögerbar)
@@ -277,15 +277,15 @@ Schematische Darstellung
 
 * Leicht erweiterbar
 	* Generierung neuer 'Typen' via Kombination
-* Änderung des Verhalten von Entitäten
+* Änderung des Verhaltens von Entitäten
 	* Austausch von Komponenten
-* Übersichtliche Abbildung Komplexer Game Objects
+* Übersichtliche Abbildung komplexer Game Objects
 * Gute Einbindung in Editoren
 
 
 ### Cons
 
-* Hoher initialer Aufwand (inkl. Pardigmengewöhnung)
+* Hoher initialer Aufwand (inkl. Paradigmengewöhnung)
 * Overhead wenn starr datengetrieben
 * Hohes Potenzial für Spaghetti Code
 	* Abhängigkeit von Komponenten
@@ -336,7 +336,7 @@ Schematische Darstellung
 
 # Referenzen
 
-* Evolve your Hirachy (!)
+* Evolve your Hierachy (!)
 	- Mick West
 	- http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/
 * Case Study: Bomberman Mechanics in an ECS
