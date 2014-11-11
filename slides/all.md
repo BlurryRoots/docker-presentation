@@ -324,12 +324,6 @@ Schematische Darstellung
 
 
 
-## CODE !!?
-
-livedemo?
-
-
-
 # Referenzen
 
 * Data-Driven Game Object System
