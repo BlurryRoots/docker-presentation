@@ -9,6 +9,7 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node
 WORKDIR /opt
 RUN git clone https://github.com/hakimel/reveal.js.git presentation
 WORKDIR /opt/presentation
+RUN git checkout 2.6.2
 RUN npm install -g grunt-cli
 RUN npm install
 
